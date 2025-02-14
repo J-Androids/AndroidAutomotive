@@ -22,6 +22,10 @@ jobs:
       uses: android-actions/setup-android@v3
       with:
         packages: 'tools platform-tools build-tools;35.0.0 platforms;android-35 platforms;android-31'
+    
+    - name: Change wrapper permissions
+      run: chmod +x ./gradlew
+
     - name: Build with Gradle
       run: ./gradlew build
 
